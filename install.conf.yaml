@@ -1,0 +1,9 @@
+- clean: ['~']
+
+- link:
+    ~/.gitconfig: gitconfig
+    ~/.tmux.conf: tmux.conf
+    ~/.vimrc: vimrc
+    ~/.config: config
+- shell:
+    - cp  ./fonts/* ~/Library/Fonts/

@@ -1,0 +1,5 @@
+# Ceci est le fichier de configuration personnel de Git.
+[user]
+# Veuillez adapter et décommenter les lignes suivantes :
+	name = Max Roy
+	email = max@unset.ch
