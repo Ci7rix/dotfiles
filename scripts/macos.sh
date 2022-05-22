@@ -90,6 +90,10 @@ defaults write NSGlobalDomain InitialKeyRepeat -int 15
 # Remap caps lock to escape key
 hidutil property --set '{"UserKeyMapping":[{"HIDKeyboardModifierMappingSrc":0x700000039,"HIDKeyboardModifierMappingDst":0x700000029}]}' &>/dev/null
 
+# Disable layout change on ctrl-space
+/usr/libexec/PlistBuddy -c "Set :AppleSymbolicHotKeys:60:enabled 0" ~/Library/Preferences/com.apple.symbolichotkeys.plist
+/usr/libexec/PlistBuddy -c "Set :AppleSymbolicHotKeys:61:enabled 0" ~/Library/Preferences/com.apple.symbolichotkeys.plist
+
 
 ###############################################################################
 # Energy saving                                                               #
@@ -314,7 +318,6 @@ for app in "Activity Monitor" \
 	"SizeUp" \
 	"Spectacle" \
 	"SystemUIServer" \
-	"Terminal" \
 	"Transmission" \
 	"Tweetbot" \
 	"Twitter" \
