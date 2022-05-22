@@ -3,8 +3,11 @@
 # Ports to be installed
 ports=(
     nmap
-    kubectl
+    kubectl-1.24
     minikube
+    tmux
+    alacritty
+    skhd
 )
 
 # Do not modify after this line
@@ -22,5 +25,5 @@ done 2>/dev/null &
 # Installing apps
 for port in $ports; do
     echo "Installing $port"
-    sudo port -N install $port
+    sudo /opt/local/bin/port -N install $port
 done
