@@ -21,7 +21,7 @@
     - command: zsh ./scripts/macos.sh
       stdin: true
       stdout: true
-    - command: zsh ./scripts/apps.sh
+    - command: zsh ./scripts/installomator.sh
       stdin: true
       stdout: true
     - command: zsh ./scripts/macport.sh
