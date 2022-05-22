@@ -1,8 +1,8 @@
-- clean: ['~']
+- clean: ["~"]
 
 - shell:
     - [git submodule update --init --recursive, Installing submodules]
-    
+
 - link:
     ~/.zshenv: prezto/runcoms/zshenv
     ~/.zprofile: prezto/runcoms/zprofile
@@ -18,4 +18,12 @@
 
 - shell:
     - cp ./fonts/* ~/Library/Fonts/
-    - zsh ./macos.sh
+    - command: zsh ./scripts/macos.sh
+      stdin: true
+      stdout: true
+    - command: zsh ./scripts/apps.sh
+      stdin: true
+      stdout: true
+    - command: zsh ./scripts/macport.sh
+      stdin: true
+      stdout: true
