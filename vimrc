@@ -1,7 +1,7 @@
 let data_dir = has('nvim') ? stdpath('data') . '/site' : '~/.vim'
 if empty(glob(data_dir . '/autoload/plug.vim'))
-	silent execute '!curl -fLo '.data_dir.'/autoload/plug.vim --create-dirs  https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim'
-	autocmd VimEnter * PlugInstall --sync | source $MYVIMRC
+  silent execute '!curl -fLo '.data_dir.'/autoload/plug.vim --create-dirs  https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim'
+  autocmd VimEnter * PlugInstall --sync | source $MYVIMRC
 endif
 
 call plug#begin()
@@ -13,22 +13,23 @@ Plug 'itchyny/lightline.vim'
 call plug#end()
 
 autocmd VimEnter *
-			\  if len(filter(values(g:plugs), '!isdirectory(v:val.dir)'))
-			\|   PlugInstall --sync | q
-			\| endif
+      \  if len(filter(values(g:plugs), '!isdirectory(v:val.dir)'))
+      \|   PlugInstall --sync | q
+      \| endif
 
 set number
 set cursorline
 set mouse=a
+set tabstop=2 shiftwidth=2 expandtab
 
 let g:nord_bold_vertical_split_line = 1
 let g:nord_cursor_line_number_background = 1
 
 let g:lightline = {
-			\ 'colorscheme': 'nord',
-			\ 'separator': { 'left': "", 'right': "" },
-			\ 'subseparator': { 'left': "", 'right': "" }
-			\}
+      \ 'colorscheme': 'nord',
+      \ 'separator': { 'left': "", 'right': "" },
+      \ 'subseparator': { 'left': "", 'right': "" }
+      \}
 
 let g:netrw_keepdir = 0
 let g:netrw_banner = 0
