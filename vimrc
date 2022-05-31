@@ -9,6 +9,8 @@ Plug 'arcticicestudio/nord-vim'
 Plug 'tpope/vim-sensible'
 Plug 'tpope/vim-vinegar'
 Plug 'itchyny/lightline.vim'
+Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
+Plug 'junegunn/fzf.vim'
 " Initialize plugin system
 call plug#end()
 
@@ -21,6 +23,8 @@ set number
 set cursorline
 set mouse=a
 set tabstop=2 shiftwidth=2 expandtab
+
+nnoremap <silent> <C-p> :Files<CR>
 
 let g:nord_bold_vertical_split_line = 1
 let g:nord_cursor_line_number_background = 1
