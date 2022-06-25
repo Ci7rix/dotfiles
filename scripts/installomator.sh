@@ -16,6 +16,7 @@ apps=(
     teamviewer
     theunarchiver
     microsoftvisualstudiocode
+    suspiciouspackage
 )
 
 # Do not modify after this line
