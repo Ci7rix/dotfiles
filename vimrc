@@ -21,10 +21,15 @@ autocmd VimEnter *
 
 set number
 set cursorline
+set noswapfile
+set hlsearch
+set ignorecase
+set incsearch
 set mouse=a
 set tabstop=2 shiftwidth=2 expandtab
 
 nnoremap <silent> <C-p> :Files<CR>
+let mapleader = "§"
 
 let g:nord_bold_vertical_split_line = 1
 let g:nord_cursor_line_number_background = 1
