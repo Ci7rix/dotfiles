@@ -17,6 +17,7 @@ apps=(
     theunarchiver
     microsoftvisualstudiocode
     suspiciouspackage
+    vlc
 )
 
 # Do not modify after this line
