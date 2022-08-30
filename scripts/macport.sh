@@ -8,6 +8,9 @@ ports=(
     tmux
     alacritty
     skhd
+    yabai
+    colima
+    docker
 )
 
 # Do not modify after this line

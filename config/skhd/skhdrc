@@ -153,4 +153,4 @@ alt - t : yabai -m window --toggle float;\
 #           yabai -m window --toggle pip
 
 # restart yabai
-ctrl + alt + cmd - r : launchctl kickstart -k "gui/${UID}/com.koekeishiya.yabai"
+ctrl + alt + cmd - r : launchctl kickstart -k "gui/${UID}/org.macports.yabai"
