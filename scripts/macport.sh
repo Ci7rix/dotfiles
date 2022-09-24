@@ -1,4 +1,4 @@
-#! /bin/zsh
+# /bin/zsh
 
 # Ports to be installed
 ports=(
@@ -11,6 +11,8 @@ ports=(
     yabai
     colima
     docker
+    yt-dlp
+    pam-reattach
 )
 
 # Do not modify after this line

@@ -3,17 +3,12 @@
 # Apps to be installed
 apps=(
     macports
-    authydesktop
     firefoxpkg_intl
     cyberduck
     appcleaner
-    insomnia
     logitechoptions
     maccyapp
-    microsoftofficebusinesspro
-    microsoftremotedesktop
     suspiciouspackage
-    teamviewer
     theunarchiver
     microsoftvisualstudiocode
     suspiciouspackage
