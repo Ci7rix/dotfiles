@@ -18,12 +18,15 @@
 
 - shell:
     - cp ./fonts/* ~/Library/Fonts/
-    - command: zsh ./scripts/macos.sh
+    - command: zsh ./modules/defaults.sh
       stdin: true
       stdout: true
-    - command: zsh ./scripts/installomator.sh
+    - command: zsh ./modules/installomator.sh
       stdin: true
       stdout: true
-    - command: zsh ./scripts/macport.sh
+    - command: zsh ./modules/macport.sh
+      stdin: true
+      stdout: true
+    - command: zsh ./modules/touchid.sh
       stdin: true
       stdout: true
