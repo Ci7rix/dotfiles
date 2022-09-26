@@ -1,4 +1,4 @@
-#!/usr/bin/env bash
+#!/usr/bin/env bash 
 
 # ~/.macos — https://mths.be/macos
 
@@ -20,9 +20,9 @@ ModelName=$(system_profiler SPHardwareDataType | grep 'Model Name' | awk '{print
 SerialNumber=$(system_profiler SPHardwareDataType | grep 'Serial Number (system)' | awk '{print $NF}')
 
 # Set computer name (as done via System Preferences → Sharing)
-sudo scutil --set ComputerName $ModelName-$SerialNumber
-sudo scutil --set HostName $ModelName-$SerialNumber
-sudo scutil --set LocalHostName $ModelName-$SerialNumber
+sudo scutil --set ComputerName "$ModelName-$SerialNumber"
+sudo scutil --set HostName "$ModelName-$SerialNumber"
+sudo scutil --set LocalHostName "$ModelName-$SerialNumber"
 
 # Disable the sound effects on boot
 sudo nvram SystemAudioVolume=" "

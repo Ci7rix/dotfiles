@@ -1,4 +1,4 @@
-#! /bin/zsh
+#!/usr/bin/env bash
 
 # Apps to be installed
 apps=(
@@ -10,6 +10,7 @@ apps=(
     maccyapp
     suspiciouspackage
     theunarchiver
+    lulu
     microsoftvisualstudiocode
     suspiciouspackage
     vlc
@@ -37,19 +38,19 @@ appNewVersion=$(curl -L --silent --fail "https://api.github.com/repos/Installoma
 downloadURL=$(curl -L --silent --fail "https://api.github.com/repos/Installomator/Installomator/releases/latest" | awk -F '"' "/browser_download_url/ && /.pkg\"/ { print \$4; exit }")
 
 # Checking if local version is the latest
-if [[ $installedVersion = $appNewVersion ]]; then
+if [[ $installedVersion = "$appNewVersion" ]]; then
     echo "No update needed, found packageID $packageID installed, version $installedVersion."
 else
     echo "Version mismatch or not found using packageID $packageID"
     tmp_dir=$(mktemp -d)
     echo "Created temp dir to $tmp_dir"
-    curl -L -o $tmp_dir/Installomator.pkg $downloadURL
+    curl -L -o "$tmp_dir"/Installomator.pkg "$downloadURL"
     echo "Downloaded Installomator"
-    sudo installer -verbose -dumplog -pkg $tmp_dir/Installomator.pkg -target /
+    sudo installer -verbose -dumplog -pkg "$tmp_dir"/Installomator.pkg -target /
     echo "Insallomator version $appNewVersion installed"
 fi
 
 # Installing apps
-for app in $apps; do
-    sudo /usr/local/Installomator/Installomator.sh $app
+for app in "${apps[@]}"; do
+    sudo /usr/local/Installomator/Installomator.sh "$app"
 done

@@ -1,5 +1,5 @@
-# /bin/zsh
-
+#!/usr/bin/env bash
+#
 # Ports to be installed
 ports=(
     nmap
@@ -28,7 +28,7 @@ while true; do
 done 2>/dev/null &
 
 # Installing apps
-for port in $ports; do
+for port in "${ports[@]}"; do
     echo "Installing $port"
-    sudo /opt/local/bin/port -N install $port
+    sudo /opt/local/bin/port -N install "$port"
 done
