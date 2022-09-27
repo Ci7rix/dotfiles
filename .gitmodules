@@ -5,3 +5,4 @@
 [submodule "prezto"]
 	path = prezto
 	url = https://github.com/Ci7rix/prezto.git
+	ignore = dirty
