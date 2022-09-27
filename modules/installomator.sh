@@ -2,7 +2,6 @@
 
 # Apps to be installed
 apps=(
-    macports
     firefoxpkg_intl
     cyberduck
     appcleaner
