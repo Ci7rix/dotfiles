@@ -3,6 +3,6 @@
 	url = https://github.com/anishathalye/dotbot
 	ignore = dirty
 [submodule "prezto"]
-	path = prezto
+	path = dotfiles/prezto
 	url = https://github.com/Ci7rix/prezto.git
 	ignore = dirty

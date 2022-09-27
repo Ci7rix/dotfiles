@@ -4,29 +4,34 @@
     - [git submodule update --init --recursive, Installing submodules]
 
 - link:
-    ~/.zshenv: prezto/runcoms/zshenv
-    ~/.zprofile: prezto/runcoms/zprofile
-    ~/.zshrc: prezto/runcoms/zshrc
-    ~/.zpreztorc: prezto/runcoms/zpreztorc
-    ~/.zlogin: prezto/runcoms/zlogin
-    ~/.zlogout: prezto/runcoms/zlogout
-    ~/.zprezto: prezto/
-    ~/.gitconfig: gitconfig
-    ~/.tmux.conf: tmux.conf
-    ~/.vimrc: vimrc
-    ~/.config: config
+    ~/.zshenv: dotfiles/prezto/runcoms/zshenv
+    ~/.zprofile: dotfiles/prezto/runcoms/zprofile
+    ~/.zshrc: dotfiles/prezto/runcoms/zshrc
+    ~/.zpreztorc: dotfiles/prezto/runcoms/zpreztorc
+    ~/.zlogin: dotfiles/prezto/runcoms/zlogin
+    ~/.zlogout: dotfiles/prezto/runcoms/zlogout
+    ~/.zprezto: dotfiles/prezto/
+    ~/.gitconfig: dotfiles/gitconfig
+    ~/.tmux.conf: dotfiles/tmux.conf
+    ~/.vimrc: dotfiles/vimrc
+    ~/.config: dotfiles/config
 
 - shell:
-    - cp ./fonts/* ~/Library/Fonts/
+    - command: cp ./files/fonts/* ~/Library/Fonts/
+      if: '[ `uname` = Darwin ]'
     - command: zsh ./modules/defaults.sh
+      if: '[ `uname` = Darwin ]'
       stdin: true
       stdout: true
     - command: zsh ./modules/installomator.sh
+      if: '[ `uname` = Darwin ]'
       stdin: true
       stdout: true
     - command: zsh ./modules/macport.sh
+      if: '[ `uname` = Darwin ]'
       stdin: true
       stdout: true
     - command: zsh ./modules/touchid.sh
+      if: '[ `uname` = Darwin ]'
       stdin: true
       stdout: true
