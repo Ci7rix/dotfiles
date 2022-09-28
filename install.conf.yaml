@@ -17,6 +17,10 @@
     ~/.config: dotfiles/config
 
 - shell:
+    - command: zsh ./modules/xcode.sh
+      if: '[ `uname` = Darwin ]'
+      stdin: true
+      stdout: true
     - command: cp ./files/fonts/* ~/Library/Fonts/
       if: '[ `uname` = Darwin ]'
     - command: zsh ./modules/defaults.sh
