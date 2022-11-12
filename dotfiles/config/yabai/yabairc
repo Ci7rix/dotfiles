@@ -46,4 +46,18 @@ yabai -m config                                 \
     mouse_action2                resize         \
     mouse_drop_action            swap
 
+# Get The List Of Open App Windows In Yabai
+# yabai -m query --windows | jq '.[] | { app: .app, title: .title }'
+# rules
+yabai -m rule \
+    --add app="^Finder$" title="(Co(pie|nnexion)|Déplacer|Infos|Préférences)" manage=off
+yabai -m rule \
+    --add app="^Préférences Système$" title=".*" manage=off
+yabai -m rule \
+    --add app="^App Store$" manage=off
+yabai -m rule \
+    --add app="UTM" manage=off
+yabai -m rule \
+    --add app="^Moniteur d\'activité$" manage=off
+
 echo "yabai configuration loaded.."
