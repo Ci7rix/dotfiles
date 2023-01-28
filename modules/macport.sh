@@ -71,5 +71,5 @@ fi
 # Installing apps
 for port in "${ports[@]}"; do
     echo "Installing $port"
-    sudo /opt/local/bin/port -N install "$port"
+    sudo /opt/local/bin/port -q install --allow-failing "$port"
 done
