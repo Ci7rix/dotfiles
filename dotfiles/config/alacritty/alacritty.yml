@@ -111,7 +111,7 @@ window:
   #   - OnlyRight
   #   - Both
   #   - None (default)
-  option_as_alt: OnlyLeft
+  option_as_alt: None
 
 #scrolling:
   # Maximum number of lines in the scrollback buffer.
