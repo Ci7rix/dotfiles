@@ -14,6 +14,7 @@ apps=(
     keepingyouawake
     pika
     utm
+    carboncopycloner
 )
 
 # Do not modify after this line
