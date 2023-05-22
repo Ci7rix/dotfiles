@@ -3,7 +3,7 @@
 # Ports to be installed
 ports=(
     nmap
-    kubectl-1.24
+    kubectl-1.26
     minikube
     tmux
     alacritty
@@ -11,8 +11,13 @@ ports=(
     yabai
     colima
     docker
+    docker-compose
     yt-dlp
     pam-reattach
+    tree
+    minicom
+    iperf3
+    zsh
 )
 
 # Do not modify after this line
