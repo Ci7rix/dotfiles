@@ -5,14 +5,15 @@ apps=(
     firefoxpkg_intl
     cyberduck
     appcleaner
-    logitechoptions
     maccyapp
     suspiciouspackage
     theunarchiver
     lulu
-    microsoftvisualstudiocode
     suspiciouspackage
     vlc
+    keepingyouawake
+    pika
+    utm
 )
 
 # Do not modify after this line
