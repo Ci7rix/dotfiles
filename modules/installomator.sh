@@ -13,6 +13,7 @@ apps=(
     vlc
     keepingyouawake
     pika
+    tailscale
     utm
     carboncopycloner
 )

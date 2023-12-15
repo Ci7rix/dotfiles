@@ -76,7 +76,7 @@
 # A REFERENCE ONLY, WHEN MAKING YOUR OWN CONFIGURATION..          #
 # ############################################################### #
 # open terminal, blazingly fast compared to iTerm/Hyper
-cmd - return : open -a /Applications/MacPorts/Alacritty.app/Contents/MacOS/alacritty
+cmd - return : /Applications/MacPorts/Alacritty.app/Contents/MacOS/alacritty
 
 # focus window
 alt - h : yabai -m window --focus west

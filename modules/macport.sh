@@ -33,6 +33,9 @@ while true; do
 done 2>/dev/null &
 
 case $(uname -r | cut -d '.' -f 1) in
+    23)
+        archiveName="Sonoma.pkg"
+        ;;
     22)
         archiveName="Ventura.pkg"
         ;;
