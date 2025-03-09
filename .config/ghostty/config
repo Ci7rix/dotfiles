@@ -1,0 +1,17 @@
+font-family = "Monaspace Argon Var"
+font-size = 12
+font-thicken = true
+shell-integration-features = no-cursor
+cursor-style = block
+
+window-padding-x = 5
+window-padding-y = 5
+
+window-decoration = none
+quit-after-last-window-closed = true
+
+theme = "rose-pine"
+
+confirm-close-surface = false
+
+link-url = true
