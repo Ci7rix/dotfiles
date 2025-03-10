@@ -4,10 +4,29 @@ system_type=$(uname -s)
 
 if [ "$system_type" = "Darwin" ]; then
 
+  xcode-select -p &> /dev/null
+  if [ $? -ne 0 ]; then
+    echo "Command Line Tools for Xcode not found. Installing from softwareupdate…"
+    # This temporary file prompts the 'softwareupdate' utility to list the Command Line Tools
+    touch /tmp/.com.apple.dt.CommandLineTools.installondemand.in-progress;
+    PROD=$(softwareupdate -l | grep "\*.*Command Line" | tail -n 1 | sed 's/^[^C]* //')
+    softwareupdate -i "$PROD" --verbose;
+  else
+    echo "Command Line Tools for Xcode have been installed."
+  fi
+
   # install homebrew if it's missing
   if ! command -v brew >/dev/null 2>&1; then
     echo "Installing homebrew"
     /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
+    brew install yadm
+  fi
+
+  if [ ! -d "$HOME/.config/local/share/yadm/repo.git" ]; then
+    echo "Clone yadm repo"
+    mkdir -p "$HOME/.config/local/share/yadm"
+    yadm clone --yadm-dir "$HOME/.config/local/share/yadm" --no-bootstrap https://github.com/Ci7rix/dotfiles.git
+    yadm checkout "$HOME"
   fi
 
   if [ -f "$HOME/.Brewfile" ]; then
@@ -19,11 +38,4 @@ if [ "$system_type" = "Darwin" ]; then
     echo "Delete default .local"
     rm -rf "$HOME/.local"
   fi
-
-  if [ ! -d "$HOME/.config/local/share/yadm/repo.git" ]; then
-    echo "Clone yadm repo"
-    yadm clone --no-bootstrap https://github.com/Ci7rix/dotfiles.git
-    yadm checkout "$HOME"
-  fi
-
 fi
