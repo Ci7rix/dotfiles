@@ -22,6 +22,12 @@ if [ "$system_type" = "Darwin" ]; then
     brew install yadm
   fi
 
+  # install homebrew if it's missing
+  if ! command -v yadm >/dev/null 2>&1; then
+    echo "Installing yadm"
+    brew install yadm
+  fi
+
   if [ ! -d "$HOME/.config/local/share/yadm/repo.git" ]; then
     echo "Clone yadm repo"
     mkdir -p "$HOME/.config/local/share/yadm"
