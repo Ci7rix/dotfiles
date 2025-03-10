@@ -15,5 +15,3 @@ export SAVEHIST=10000                   # Maximum events in history file
 
 # Starship
 export STARSHIP_CONFIG="$XDG_CONFIG_HOME/starship/starship.toml"
-
-export PATH="/opt/local/bin:$HOME/homebrew/bin:$PATH"
