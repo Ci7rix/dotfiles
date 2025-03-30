@@ -1,0 +1,19 @@
+[general]
+import = ["~/.config/alacritty/rose-pine.toml"]
+
+[window]
+padding = { x = 5, y = 5}
+decorations = "None"
+startup_mode = "Maximized"
+
+[scrolling]
+multiplier = 1
+
+[font]
+normal = { family = "Monaspace Argon", style = "Regular" }
+bold = { family = "Monaspace Argon", style = "Bold" }
+italic = { family = "Monaspace Argon", style = "Italic" }
+bold_italic = { family = "Monaspace Argon", style = "Bold Italic" }
+
+[mouse]
+hide_when_typing = true

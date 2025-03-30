@@ -1,0 +1,26 @@
+# https://github.com/koekeishiya/yabai/wiki/Configuration#tiling-options
+yabai -m config layout bsp
+
+yabai -m config top_padding    4
+yabai -m config bottom_padding 4
+yabai -m config left_padding   4
+yabai -m config right_padding  4
+yabai -m config window_gap     4
+
+# https://github.com/koekeishiya/yabai/wiki/Configuration#mouse-support
+yabai -m config mouse_follows_focus on
+
+# Get The List Of Open App Windows In Yabai
+# yabai -m query --windows | jq '.[] | { app: .app, title: .title }'
+# rules
+yabai -m rule \
+    --add app="^Finder$" title="(Co(pie|nnexion)|Déplacer|Infos|Préférences)" manage=off
+yabai -m rule \
+    --add app="^Réglages Système$" manage=off
+yabai -m rule \
+    --add app="^App Store$" manage=off
+yabai -m rule \
+    --add app="UTM" manage=off
+yabai -m rule \
+    --add app="^Moniteur d\'activité$" manage=off
+

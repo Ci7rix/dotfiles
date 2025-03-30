@@ -1,0 +1,28 @@
+# toggle float
+alt - t : yabai -m window --toggle float;\
+	  yabai -m window --grid 6:6:1:1:4:4
+
+# toggle fullscreen
+alt - f : yabai -m window --toggle zoom-fullscreen
+
+# toggle sticky
+alt - s : yabai -m window --toggle sticky
+
+# rotate 90 degrees
+alt + shift - r : yabai -m space --rotate 90
+
+# balance windows
+alt + shift - e : yabai -m space --balance
+
+# focus previous or next window
+alt - tab : yabai -m window --focus next
+alt + shift - tab : yabai -m window --focus prev
+
+# open Alacritty 
+cmd - return : /Applications/Alacritty.app/Contents/MacOS/alacritty
+
+# open Firefox
+cmd + shift - return : open -a /Applications/Firefox.app
+
+# restart yabai
+ctrl + alt + cmd - r : yabai --restart-service
