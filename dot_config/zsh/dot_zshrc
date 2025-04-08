@@ -1,25 +1,49 @@
-# Eval
-eval "$(/opt/homebrew/bin/brew shellenv)"
-eval "$(starship init zsh)"
-eval "$(mise activate zsh)"
+# Initialize Zsh completions
+autoload -Uz compinit
+compinit
 
-# Zinit
-ZINIT_HOME="${XDG_DATA_HOME:-${HOME}/.local/share}/zinit/zinit.git"
-[ ! -d $ZINIT_HOME ] && mkdir -p "$(dirname $ZINIT_HOME)"
-[ ! -d $ZINIT_HOME/.git ] && git clone https://github.com/zdharma-continuum/zinit.git "$ZINIT_HOME"
-source "${ZINIT_HOME}/zinit.zsh"
+# Eval with existence checks
+# Check Homebrew installation
+if [ -x /opt/homebrew/bin/brew ]; then
+  eval "$(/opt/homebrew/bin/brew shellenv)"
+else
+  echo "[WARN] Homebrew not found at /opt/homebrew/bin/brew" >&2
+fi
 
-# Tmux
-zstyle ':prezto:module:tmux:auto-start' local 'yes'
-zstyle ':prezto:module:tmux:session' name 'default'
+# Check Starship installation
+if command -v starship >/dev/null 2>&1; then
+  eval "$(starship init zsh)"
+else
+  echo "[WARN] Starship not found" >&2
+fi
 
-# SSH
-zstyle ':prezto:module:ssh:load' identities 'id_unset' 'id_yena'
+# Check Mise installation
+if command -v mise >/dev/null 2>&1; then
+  eval "$(mise activate zsh)"
+else
+  echo "[WARN] Mise not found" >&2
+fi
 
-# Utility
-zstyle ':prezto:module:utility:ls' color 'yes'
+# Check Zoxide installation
+if command -v mise >/dev/null 2>&1; then
+  eval "$(zoxide init zsh)"
+else
+  echo "[WARN] Zoxide not found" >&2
+fi
 
-# Various modules
+# Zinit setup (plugin manager)
+ZINIT_HOME="${XDG_DATA_HOME:-$HOME/.local/share}/zinit/zinit.git"
+[ ! -d "$ZINIT_HOME" ] && mkdir -p "$(dirname "$ZINIT_HOME")"
+[ ! -d "$ZINIT_HOME/.git" ] && git clone https://github.com/zdharma-continuum/zinit.git "$ZINIT_HOME"
+source "$ZINIT_HOME/zinit.zsh"
+
+# Prezto module configurations
+zstyle ':prezto:module:tmux:auto-start' local 'yes'    # Auto-start tmux
+zstyle ':prezto:module:tmux:session' name 'default'    # Default session name
+zstyle ':prezto:module:ssh:load' identities 'id_unset' 'id_yena'  # SSH keys
+zstyle ':prezto:module:utility:ls' color 'yes'         # Colorized ls
+
+# Load Prezto modules via Zinit
 zinit snippet PZTM::environment
 zinit snippet PZTM::history
 zinit snippet PZTM::directory
@@ -28,20 +52,29 @@ zinit snippet PZTM::gnu-utility
 zinit snippet PZTM::utility
 zinit snippet PZTM::helper
 zinit snippet PZTM::tmux
-zinit snippet PZTM::macports
 zinit snippet PZTM::homebrew
 zinit snippet PZTM::completion
 zinit snippet PZTM::ssh
 
-# zsh-syntax-highlighting
-zinit snippet 'https://github.com/catppuccin/zsh-syntax-highlighting/blob/main/themes/catppuccin_mocha-zsh-syntax-highlighting.zsh'
+# Load oh-my-zsh modules via Zinit
+zinit snippet OMZP::docker
+zinit snippet OMZP::kind
+zinit snippet OMZP::kubectl
+
+# Syntax highlighting
 zinit light zsh-users/zsh-syntax-highlighting
+# Theme
+zinit snippet 'https://raw.githubusercontent.com/catppuccin/zsh-syntax-highlighting/main/themes/catppuccin_mocha-zsh-syntax-highlighting.zsh'
+
+# Autosuggestions
 zinit light zsh-users/zsh-autosuggestions
 
-# zsh-history-substring-search
-zinit light zsh-users/zsh-history-substring-search
+# History substring search
 zinit ice wait lucid atload'__bind_history_keys'
+zinit light zsh-users/zsh-history-substring-search
+
+# Key bindings for history search
 function __bind_history_keys() {
-  bindkey '^[[A' history-substring-search-up
-  bindkey '^[[B' history-substring-search-down
+  bindkey '^[[A' history-substring-search-up    # Up arrow
+  bindkey '^[[B' history-substring-search-down  # Down arrow
 }
