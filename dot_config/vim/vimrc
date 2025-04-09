@@ -18,9 +18,9 @@ autocmd VimEnter *
       \| endif
 
 " Look and feel
-set background=dark
-colorscheme rosepine
-let g:lightline = { 'colorscheme': 'rosepine' }
+set termguicolors
+colorscheme rosepine_dawn
+let g:lightline = { 'colorscheme': 'rosepine_dawn' }
 
 " You want Vim, not vi. When Vim finds a vimrc, 'nocompatible' is set anyway.
 " We set it explicitely to make our position clear!

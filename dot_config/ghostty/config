@@ -1,0 +1,20 @@
+# Theme Configuration
+theme = light:rose-pine-dawn,dark:rose-pine
+
+# Window Behavior
+maximize = true
+
+window-decoration = "none"
+
+# Window Padding
+window-padding-x = 5
+window-padding-y = 5
+window-padding-balance = true
+
+# Font Settings
+font-size = 12
+font-thicken = true
+font-family = "Monaspace Argon Var"
+
+# Interaction
+mouse-hide-while-typing = true
