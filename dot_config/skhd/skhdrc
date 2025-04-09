@@ -18,8 +18,8 @@ alt + shift - e : yabai -m space --balance
 alt - tab : yabai -m window --focus next
 alt + shift - tab : yabai -m window --focus prev
 
-# open Alacritty 
-cmd - return : /Applications/Alacritty.app/Contents/MacOS/alacritty
+# open Ghostty
+cmd - return : open -na /Applications/Ghostty.app/Contents/MacOS/ghostty
 
 # open Firefox
 cmd + shift - return : open -a /Applications/Firefox.app
