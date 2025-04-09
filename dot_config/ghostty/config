@@ -14,8 +14,9 @@ window-padding-balance = true
 
 # Font Settings
 font-size = 12
-font-thicken = true
 font-family = "Monaspace Argon Var"
+font-thicken = true
+font-thicken-strength = 128
 
 # Interaction
 mouse-hide-while-typing = true
