@@ -31,6 +31,14 @@ else
   echo "[WARN] Zoxide not found" >&2
 fi
 
+# Check Carapace installation
+if command -v carapace >/dev/null 2>&1; then
+  zstyle ':completion:*' format $'\e[2;37mCompleting %d\e[m'
+  source <(carapace _carapace)
+else
+  echo "[WARN] Carapace not found" >&2
+fi
+
 # Zinit setup (plugin manager)
 ZINIT_HOME="${XDG_DATA_HOME:-$HOME/.local/share}/zinit/zinit.git"
 [ ! -d "$ZINIT_HOME" ] && mkdir -p "$(dirname "$ZINIT_HOME")"
