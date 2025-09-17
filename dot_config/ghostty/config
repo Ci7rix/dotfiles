@@ -1,5 +1,5 @@
 # Theme Configuration
-theme = light:rose-pine-dawn,dark:rose-pine
+theme = light:Rose Pine Dawn,dark:Rose Pine
 
 # Window Behavior
 maximize = true
